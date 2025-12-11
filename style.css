@@ -1,0 +1,339 @@
+/* Import font dari Google Fonts: Poppins untuk modern, Playfair Display untuk elegan/judul */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    /* Variabel Warna Mode Cerah (Default - Terinspirasi Emas & Batu) */
+    --primary-color: #CC7722; /* Burnt Orange/Emas Karat - Semangat */
+    --secondary-color: #36454F; /* Charcoal - Batu Gelap */
+    --background-color: #F7F7F7; /* Light Gray - Latar Belakang Bersih */
+    --text-color: #121212; /* Hampir Hitam */
+    --card-bg: #FFFFFF; /* Putih Bersih */
+    --border-color: #E0E0E0;
+    --hero-text-color: #FFFFFF;
+}
+
+/* Variabel Warna Mode Gelap - Lebih Dramatis */
+body.dark-mode {
+    --primary-color: #FFD700; /* Emas Penuh */
+    --secondary-color: #D35400; /* Oranye Terbakar */
+    --background-color: #1A1A1A; /* Dark Grey */
+    --text-color: #EAEAEA; /* Teks Putih Pudar */
+    --card-bg: #2C2C2C; /* Abu-abu Sedang */
+    --border-color: #444444;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.7;
+    transition: background-color 0.6s, color 0.6s;
+    scroll-behavior: smooth;
+}
+
+/* --- HERO SECTION DRAMATIS --- */
+.hero-section {
+    height: 80vh; /* Tinggi 80% dari viewport */
+    background: url('upacarakasada.jpg') no-repeat center center/cover; 
+    /* GANTI 'hero-bromo-kasada.jpg' DENGAN NAMA FOTO HERO ANDA */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero-overlay {
+    background-color: rgba(0, 0, 0, 0.6); /* Overlay gelap agar teks terbaca */
+    padding: 40px;
+    border-radius: 10px;
+    color: var(--hero-text-color);
+}
+
+.hero-section h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 0;
+    line-height: 1;
+}
+
+.hero-section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 300;
+    margin-top: 5px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    padding: 12px 30px;
+    margin-top: 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-button:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+/* --- HEADER NAVIGASI STICKY (Setelah Hero) --- */
+#main-header {
+    background-color: var(--secondary-color);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#main-header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 18px;
+    font-weight: 600;
+    padding-bottom: 3px;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s, color 0.3s;
+}
+
+#main-header nav a:hover {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+#modeToggle {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-left: 20px;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 600;
+}
+body.dark-mode #modeToggle {
+    color: var(--text-color); /* Pastikan ikon mode gelap terlihat di latar gelap */
+}
+
+#modeToggle:hover {
+    background-color: #FFC300;
+}
+
+/* --- KONTEN UTAMA --- */
+main {
+    padding: 40px 5%;
+}
+
+.content-section {
+    background-color: var(--card-bg);
+    padding: 40px;
+    margin-bottom: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-top: 6px solid var(--primary-color); /* Aksen Utama */
+    transition: background-color 0.5s, box-shadow 0.5s;
+}
+
+.content-section h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    font-size: 2rem;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border-color); /* Garis bawah elegan */
+}
+
+.content-section h3 {
+    color: var(--primary-color);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* BLOCKQUOTE (NARASI) STYLE */
+.narration {
+    border-left: 5px solid var(--primary-color);
+    padding: 15px 20px;
+    margin: 25px 0;
+    background-color: var(--border-color);
+    font-style: italic;
+    color: var(--secondary-color);
+    transition: background-color 0.5s;
+}
+.narration footer {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.85rem;
+    font-style: normal;
+    color: var(--text-color);
+}
+body.dark-mode .narration {
+    background-color: #383838;
+}
+
+/* RITUAL LIST STYLE */
+.ritual-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 25px;
+}
+.ritual-list li {
+    background-color: var(--border-color);
+    border: 1px solid var(--border-color);
+    margin-bottom: 10px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.ritual-list li:hover {
+    background-color: var(--card-bg);
+    transform: translateX(5px);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+.ritual-list li strong {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* CARD GRID (FILOSOFI) */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.filosofi-card {
+    background-color: var(--border-color);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.4s, transform 0.4s;
+    border-top: 4px solid var(--secondary-color);
+}
+
+.filosofi-card:hover {
+    transform: translateY(-5px);
+    border-top: 4px solid var(--primary-color);
+}
+
+.filosofi-card h3 {
+    color: var(--secondary-color);
+    margin-top: 0;
+    font-size: 1.25rem;
+}
+body.dark-mode .filosofi-card h3 {
+    color: var(--primary-color);
+}
+body.dark-mode .filosofi-card {
+    background-color: #383838;
+}
+
+
+/* Galeri Foto */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 3px solid var(--border-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease-in-out, border-color 0.4s;
+}
+
+.gallery img:hover {
+    transform: translateY(-5px) scale(1.02);
+    border-color: var(--primary-color);
+}
+
+/* GOOGLE MAPS STYLE */
+.map-container {
+    overflow: hidden;
+    /* Rasio aspek 16:9 */
+    padding-top: 56.25%; 
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+.map-container iframe {
+    border: 0;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.guide-text {
+    text-align: center;
+    margin-top: 25px;
+    font-style: italic;
+    color: var(--secondary-color);
+}
+body.dark-mode .guide-text {
+    color: var(--primary-color);
+}
+
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 60vh;
+    }
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    .hero-section h2 {
+        font-size: 1.2rem;
+    }
+    #main-header {
+        flex-direction: column;
+    }
+    #main-header nav a {
+        margin: 5px 10px;
+        font-size: 0.9rem;
+    }
+    #modeToggle {
+        margin-top: 10px;
+        margin-left: 0;
+    }
+    .content-section {
+        padding: 25px;
+    }
+    .map-container {
+        padding-top: 75%; /* Rasio lebih tinggi untuk layar kecil */
+    }
+}
